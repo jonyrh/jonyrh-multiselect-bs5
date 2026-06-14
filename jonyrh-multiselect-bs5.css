@@ -1,0 +1,333 @@
+/**
+ * Jony Rh MultiSelect for Bootstrap 5.3 
+ * Copyright (c) 2026, Jony Rh
+ * http://www.jonyrh.ru 
+ */
+
+.bs-multiselect-container {
+  --item-height: 33px;
+  --search-height: 31px;
+  --actions-height: 20px;
+
+  --list-padding-top: 4px;
+  --list-padding-bottom: 8px;
+
+  --header-padding-top: 16px;
+  --header-padding-bottom: 12px;
+  --search-margin-bottom: 10px;
+
+  --cross-size: 12px;
+  --cross-thickness: 2px;
+}
+
+.bs-multiselect-container .dropdown-menu {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.bs-multiselect-container .multiselect-header {
+  background-color: var(--bs-body-bg);
+  padding: var(--header-padding-bottom) 16px;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.bs-multiselect-container .multiselect-header:has(.input-group) {
+  padding: var(--header-padding-top) 16px var(--header-padding-bottom) 16px;
+}
+
+.bs-multiselect-container .multiselect-header:has(.input-group):not(:has(.btn-link)) {
+  padding: var(--header-padding-top) 16px var(--header-padding-top) 16px;
+}
+
+.bs-multiselect-container .multiselect-header:has(.input-group):not(:has(.btn-link)) .input-group {
+  margin-bottom: 0 !important;
+}
+
+.bs-multiselect-container .multiselect-header .input-group {
+  height: var(--search-height) !important;
+  margin-bottom: var(--search-margin-bottom) !important;
+}
+
+.bs-multiselect-container .multiselect-header .input-group .form-control {
+  height: var(--search-height) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: var(--search-height) !important;
+}
+
+.bs-multiselect-container .multiselect-header .btn-link {
+  height: var(--actions-height) !important;
+  line-height: var(--actions-height) !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.bs-multiselect-container .options-list {
+  padding: var(--list-padding-top) 16px var(--list-padding-bottom) 16px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.bs-multiselect-container .dropdown-menu>.options-list:first-child {
+  padding-top: 8px;
+}
+
+.bs-multiselect-container .no-results {
+  font-style: italic !important;
+  text-align: left !important;
+  padding-top: 12px !important;
+  padding-bottom: 8px !important;
+  padding-left: 8px !important;
+  color: var(--bs-secondary-color) !important;
+}
+
+.bs-multiselect-container .options-list.has-max-items {
+  max-height: calc((var(--item-height) * var(--max-items)) + var(--list-padding-top) + var(--list-padding-bottom)) !important;
+}
+
+.bs-multiselect-container .multiselect-group-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--bs-secondary-color);
+  padding: 6px 8px 2px 0px;
+  user-select: none;
+}
+
+.bs-multiselect-container .multiselect-hr {
+  margin: 6px -8px !important;
+  border-color: var(--bs-border-color);
+  opacity: 0.6;
+}
+
+.bs-multiselect-container .custom-option {
+  cursor: pointer;
+  border-radius: var(--bs-border-radius-sm, 4px);
+  transition: background-color 0.15s ease;
+  padding: 0 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  display: flex !important;
+  align-items: center !important;
+  height: var(--item-height);
+  box-sizing: border-box;
+}
+
+.bs-multiselect-container .custom-option .form-check-input {
+  margin-left: 0 !important;
+  margin-right: 8px !important;
+  margin-top: 0 !important;
+  flex-shrink: 0;
+  align-self: center !important;
+}
+
+.bs-multiselect-container .custom-option:not(.disabled-option):hover {
+  background-color: var(--bs-tertiary-bg, #f8f9fa);
+}
+
+.bs-multiselect-container .custom-option.disabled-option {
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+}
+
+.bs-multiselect-container .custom-option.disabled-option .form-check-input,
+.bs-multiselect-container .custom-option.disabled-option .form-check-label {
+  cursor: not-allowed !important;
+}
+
+.bs-multiselect-container .form-check-label {
+  cursor: pointer;
+  user-select: none;
+  line-height: var(--item-height);
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.bs-multiselect-container .clear-search-btn {
+  position: relative !important;
+  display: block !important;
+  border-color: var(--bs-border-color) !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  width: 36px !important;
+  height: 100% !important;
+  z-index: 4 !important;
+}
+
+.bs-multiselect-container .clear-search-btn::before,
+.bs-multiselect-container .clear-search-btn::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: var(--cross-size) !important;
+  height: var(--cross-thickness) !important;
+  background-color: var(--bs-secondary-color) !important;
+  transition: background-color 0.15s ease;
+}
+
+.bs-multiselect-container .clear-search-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+.bs-multiselect-container .clear-search-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
+
+.bs-multiselect-container .clear-search-btn:hover {
+  background-color: var(--bs-tertiary-bg) !important;
+  border-color: var(--bs-border-color) !important;
+}
+
+.bs-multiselect-container .clear-search-btn:hover::before,
+.bs-multiselect-container .clear-search-btn:hover::after {
+  background-color: var(--bs-danger) !important;
+}
+
+.bs-multiselect-container .clear-search-btn:focus {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  border-color: var(--bs-border-color) !important;
+}
+
+.bs-multiselect-container .dropdown-item:active,
+.bs-multiselect-container .dropdown-item:focus {
+  background-color: transparent !important;
+  color: var(--bs-body-color) !important;
+}
+
+.bs-multiselect-container.bs-multiselect-sm {
+  font-size: 0.875rem;
+  --item-height: 27px;
+  --search-height: 26px;
+  --actions-height: 16px;
+  --list-padding-top: 3px;
+  --list-padding-bottom: 6px;
+  --header-padding-top: 12px;
+  --header-padding-bottom: 8px;
+  --search-margin-bottom: 8px;
+  --cross-size: 10px;
+  --cross-thickness: 1.5px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .multiselect-header {
+  padding: var(--header-padding-bottom) 12px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .multiselect-header:has(.input-group) {
+  padding: var(--header-padding-top) 12px var(--header-padding-bottom) 12px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .multiselect-header:has(.input-group):not(:has(.btn-link)) {
+  padding: var(--header-padding-top) 12px var(--header-padding-top) 12px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .dropdown-menu>.options-list:first-child {
+  padding-top: 6px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .options-list.has-max-items {
+  max-height: calc((var(--item-height) * var(--max-items)) + 8px) !important;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .custom-option {
+  padding: 0 6px;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .custom-option .form-check-input {
+  width: 0.875em;
+  height: 0.875em;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .btn-link {
+  font-size: 0.75rem;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .clear-search-btn {
+  width: 30px !important;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .no-results {
+  padding-top: 8px !important;
+  padding-bottom: 4px !important;
+  padding-left: 6px !important;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .multiselect-group-label {
+  font-size: 0.65rem;
+  padding: 4px 6px 1px 0px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg {
+  font-size: 1.25rem;
+  --item-height: 46px;
+  --search-height: 42px;
+  --actions-height: 26px;
+  --list-padding-top: 6px;
+  --list-padding-bottom: 12px;
+  --header-padding-top: 20px;
+  --header-padding-bottom: 14px;
+  --search-margin-bottom: 14px;
+  --cross-size: 16px;
+  --cross-thickness: 2.5px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .multiselect-header {
+  padding: var(--header-padding-bottom) 20px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .multiselect-header:has(.input-group) {
+  padding: var(--header-padding-top) 20px var(--header-padding-bottom) 20px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .multiselect-header:has(.input-group):not(:has(.btn-link)) {
+  padding: var(--header-padding-top) 20px var(--header-padding-top) 20px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .dropdown-menu>.options-list:first-child {
+  padding-top: 12px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .custom-option {
+  padding: 0 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .custom-option .form-check-input {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .btn-link {
+  font-size: 1rem;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .clear-search-btn {
+  width: 46px !important;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .no-results {
+  padding-top: 16px !important;
+  padding-bottom: 12px !important;
+  padding-left: 12px !important;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .multiselect-group-label {
+  font-size: 0.85rem;
+  padding: 8px 12px 3px 0px;
+}
+
+.bs-multiselect-container.is-invalid .dropdown-toggle {
+  border-color: var(--bs-form-invalid-border-color, #dc3545) !important;
+}
+
+.bs-multiselect-container.is-invalid .dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25) !important;
+}
