@@ -1,9 +1,8 @@
-/**
- * Jony Rh MultiSelect for Bootstrap 5.3 
- * Copyright (c) 2026, Jony Rh
- * http://www.jonyrh.ru 
- */
- 
+<!--
+Jony Rh MultiSelect for Bootstrap 5.3 
+Copyright (c) 2026, Jony Rh
+http://www.jonyrh.ru 
+-->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -50,7 +49,7 @@
         <div class="border-bottom border-secondary mb-4"></div>
         <section class="mb-5">
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 1: Цвета ТЕКСТА опций (text-primary,
-                text-success, text-warning, text-danger), ограничение по количеству элементов 4</div>
+                text-success, text-warning, text-danger), ограничение по количеству элементов 4, поиск и кнопки действий</div>
             <div class="row align-items-start">
                 <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-max-items="4"
                         data-placeholder="Цветной текст...">
@@ -83,24 +82,21 @@
         </section>
         <section class="mb-5">
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 2: Цвета ФОНА всей строки
-                (bg-primary, bg-success, bg-warning, bg-danger)</div>
+                (bg-primary, bg-success, bg-warning, bg-danger), без поиска, кнопки действий</div>
             <div class="row align-items-start">
-                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple
-                        data-placeholder="Цветной фон...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
                         <option class="bg-danger text-white">Красный (bg-danger)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple
-                        data-placeholder="Цветной фон...">
+                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
                         <option class="bg-danger text-white">Красный (bg-danger)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple
-                        data-placeholder="Цветной фон...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
@@ -110,22 +106,19 @@
         </section>
         <section class="mb-5">
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 3: Модификация ШРИФТА (fw-bold,
-                fst-italic, font-monospace)</div>
+                fst-italic, font-monospace), без кнопок действий</div>
             <div class="row align-items-start">
-                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple
-                        data-placeholder="Шрифты...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple
-                        data-placeholder="Шрифты...">
+                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple
-                        data-placeholder="Шрифты...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
@@ -173,25 +166,34 @@
         </section>
         <section class="mb-5">
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 5: Одиночный выбор по старинке без
-                multiple (Радио-кнопки статусов)</div>
+                multiple</div>
             <div class="row align-items-start">
                 <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" name="s_sm"
                         data-placeholder="Статус...">
-                        <option class="bg-danger text-white">Новая</option>
-                        <option class="bg-warning text-dark">В работе</option>
-                        <option class="bg-success text-white">Готово</option>
+                        <option class="text-primary">Приоритет (Primary)</option>
+                        <option class="text-success">Успешно (Success)</option>
+                        <option class="text-warning">Внимание (Warning)</option>
+                        <option class="text-danger">Ошибка (Danger)</option>
+                        <option class="text-info">Info (Информация)</option>
+                        <option class="text-secondary">Вторичный (Secondary)</option>
                     </select></div>
                 <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" name="s_md"
                         data-placeholder="Статус...">
-                        <option class="bg-danger text-white">Новая</option>
-                        <option class="bg-warning text-dark">В работе</option>
-                        <option class="bg-success text-white">Готово</option>
+                        <option class="text-primary">Приоритет (Primary)</option>
+                        <option class="text-success">Успешно (Success)</option>
+                        <option class="text-warning">Внимание (Warning)</option>
+                        <option class="text-danger">Ошибка (Danger)</option>
+                        <option class="text-info">Info (Информация)</option>
+                        <option class="text-secondary">Вторичный (Secondary)</option>
                     </select></div>
                 <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" name="s_lg"
                         data-placeholder="Статус...">
-                        <option class="bg-danger text-white">Новая</option>
-                        <option class="bg-warning text-dark">В работе</option>
-                        <option class="bg-success text-white">Готово</option>
+                        <option class="text-primary">Приоритет (Primary)</option>
+                        <option class="text-success">Успешно (Success)</option>
+                        <option class="text-warning">Внимание (Warning)</option>
+                        <option class="text-danger">Ошибка (Danger)</option>
+                        <option class="text-info">Info (Информация)</option>
+                        <option class="text-secondary">Вторичный (Secondary)</option>
                     </select></div>
             </div>
         </section>

@@ -34,9 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isSelectDisabled = select.disabled ? 'disabled' : '';
     const initialInvalidState = select.classList.contains('is-invalid');
+    const containerModeClass = isMultiple ? 'multiple-select' : 'single-select';
 
     const dropdownWrapper = document.createElement('div');
-    dropdownWrapper.className = `dropdown bs-multiselect-container ${sizeContainerClass} ${classesToCopy}`;
+    dropdownWrapper.className = `dropdown bs-multiselect-container ${containerModeClass} ${sizeContainerClass} ${classesToCopy}`;
 
     const inputName = `ms_group_${Math.floor(Math.random() * 100000)}`;
     const inputType = isMultiple ? 'checkbox' : 'radio';
