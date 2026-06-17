@@ -218,6 +218,60 @@ http://www.jonyrh.ru
                     </select></div>
             </div>
         </section>
+        <section class="mb-5">
+            <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 7: Использование в модальном окне Bootstrap</div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Открыть модальное окно с MultiSelect
+            </button>
+        </section>
+    </div>
+
+    <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">MultiSelect в модальном окне</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Тестирование работы выпадающего списка внутри модального окна. Выпадающий список должен выходить за границы модального окна:</p>
+                    
+                    <div class="mb-3">
+                        <label for="modalSelect1" class="form-label">Выберите элементы:</label>
+                        <select class="form-select bs-multiselect" multiple data-placeholder="Выберите технологии..." id="modalSelect1">
+                            <option class="text-primary">HTML5</option>
+                            <option class="text-success">CSS3</option>
+                            <option class="text-warning">JavaScript</option>
+                            <option class="text-danger">React</option>
+                            <option class="text-info">Vue.js</option>
+                            <option class="text-secondary">Angular</option>
+                            <option class="bg-primary text-white">TypeScript</option>
+                            <option class="bg-success text-white">Node.js</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modalSelect2" class="form-label">Выберите фреймворк:</label>
+                        <select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Выберите фреймворк..." id="modalSelect2">
+                            <optgroup label="Frontend">
+                                <option class="text-info fw-bold">React</option>
+                                <option class="text-muted">Vue</option>
+                                <option class="text-muted">Angular</option>
+                            </optgroup>
+                            <hr>
+                            <optgroup label="Backend">
+                                <option class="bg-success text-white">Express.js</option>
+                                <option class="bg-success text-white">NestJS</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
