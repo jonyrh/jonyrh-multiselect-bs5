@@ -195,6 +195,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    function syncNativeToCustom() {
+      customOptions.forEach(optionDiv => {
+        const checkbox = optionDiv.querySelector('.form-check-input');
+        if (!checkbox) return;
+
+        const val = optionDiv.dataset.value;
+        let nativeOption = select.querySelector(`option[value="${val}"]`);
+
+        if (!nativeOption) {
+          nativeOption = Array.from(select.options).find(opt => opt.textContent.trim() === val);
+        }
+
+        checkbox.checked = nativeOption ? nativeOption.selected : false;
+      });
+
+      updateLabelText();
+    }
+
     function filterItems() {
       const filter = searchInput.value.toLowerCase();
       let hasVisibleItems = false;
@@ -253,6 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     optionsList.addEventListener('change', syncCustomToNative);
 
+    select.addEventListener('change', syncNativeToCustom);
+
     if (selectAllBtn) {
       selectAllBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -260,19 +280,19 @@ document.addEventListener('DOMContentLoaded', () => {
           if (optionDiv.style.display !== 'none' && !optionDiv.classList.contains('disabled-option')) { optionDiv.querySelector('.form-check-input').checked = true; }
         }); syncCustomToNative();
       });
-    } 
-    if (clearAllBtn) { 
-      clearAllBtn.addEventListener('click', (e) => { 
-        e.stopPropagation(); 
-        customOptions.forEach(optionDiv => { 
-          if (optionDiv.style.display !== 'none' && !optionDiv.classList.contains('disabled-option')) { 
-            optionDiv.querySelector('.form-check-input').checked = false; 
-          } 
-        }); 
-        syncCustomToNative(); 
-      }); 
-    } 
-    
+    }
+    if (clearAllBtn) {
+      clearAllBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        customOptions.forEach(optionDiv => {
+          if (optionDiv.style.display !== 'none' && !optionDiv.classList.contains('disabled-option')) {
+            optionDiv.querySelector('.form-check-input').checked = false;
+          }
+        });
+        syncCustomToNative();
+      });
+    }
+
     updateLabelText();
   });
 });
