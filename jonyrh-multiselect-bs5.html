@@ -252,6 +252,31 @@ http://www.jonyrh.ru
                     </select></div>
             </div>
         </section>
+        <section class="mb-5">
+            <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 9: События addEventListener — в первом input отображаются selected value выбранных option, во втором input при вводе значения происходит автоматический выбор соответствующих option</div>
+            <div class="row align-items-start g-3">
+                <div class="col-md-6">
+                    <label for="ms-event-values-display" class="form-label fw-semibold">Выбранные значения (value):</label>
+                    <input type="text" class="form-control" id="ms-event-values-display" readonly placeholder="Здесь появятся выбранные значения...">
+                </div>
+                <div class="col-md-6">
+                    <label for="ms-event-search-input" class="form-label fw-semibold">Введите значение для выбора:</label>
+                    <input type="text" class="form-control" id="ms-event-search-input" placeholder="Начните вводить (например: React, Node)">
+                </div>
+                <div class="col-12">
+                    <select class="form-select bs-multiselect" multiple data-placeholder="События..." id="ms-event-select">
+                        <option value="react">React JS</option>
+                        <option value="vue">Vue.js</option>
+                        <option value="angular">Angular</option>
+                        <option value="node">Node.js</option>
+                        <option value="express">Express.js</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="python">Python</option>
+                        <option value="django">Django</option>
+                    </select>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Модальное окно -->
@@ -326,6 +351,54 @@ http://www.jonyrh.ru
                 this.textContent = '☀️ Светлая тема';
                 this.classList.replace('btn-outline-dark', 'btn-outline-info');
             }
+        });
+    </script>
+
+    <!-- Скрипт Варианта 9: демонстрация addEventListener -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectEl = document.getElementById('ms-event-select');
+            const valuesDisplay = document.getElementById('ms-event-values-display');
+            const searchInput = document.getElementById('ms-event-search-input');
+
+            if (!selectEl || !valuesDisplay || !searchInput) return;
+
+            // Находим контейнер bs-multiselect, созданный рядом с select
+            function getMultiselectContainer() {
+                let next = selectEl.nextElementSibling;
+                while (next) {
+                    if (next.classList && next.classList.contains('bs-multiselect-container')) {
+                        return next;
+                    }
+                    next = next.nextElementSibling;
+                }
+                return null;
+            }
+
+            // 1. Слушаем событие change — обновляем первый input выбранными value
+            selectEl.addEventListener('change', () => {
+                const selectedValues = Array.from(selectEl.selectedOptions).map(opt => opt.value || opt.textContent.trim());
+                valuesDisplay.value = selectedValues.length > 0 ? selectedValues.join(',') : '';
+            });
+
+            // 2. При вводе во второй input — выбираем option через selectOptionsByString
+            searchInput.addEventListener('input', () => {
+                const rawQuery = searchInput.value.trim();
+
+                function selectOptionsByString(selectElement, valuesString) {
+                    const valuesArray = valuesString.split(',').map(v => v.trim());
+                    Array.from(selectElement.options).forEach(option => {
+                        option.selected = valuesArray.includes(option.value);
+                    });
+                    selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                selectOptionsByString(selectEl, rawQuery);
+
+                const selectedValues = Array.from(selectEl.selectedOptions).map(opt => opt.value || opt.textContent.trim());
+                valuesDisplay.value = selectedValues.length > 0 ? selectedValues.join(',') : '';
+            });
+
         });
     </script>
 </body>
