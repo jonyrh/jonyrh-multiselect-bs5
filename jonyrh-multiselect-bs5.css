@@ -167,6 +167,9 @@
   height: 100%;
   width: calc(100% - 32px);
   padding-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bs-multiselect-container.single-select .form-check-label {

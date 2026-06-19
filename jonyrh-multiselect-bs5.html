@@ -11,12 +11,12 @@ http://www.jonyrh.ru
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jony Rh MultiSelect для Bootstrap 5.3</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./jonyrh-multiselect-bs5.css">
 
     <style>
-
         body {
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -49,10 +49,11 @@ http://www.jonyrh.ru
         <div class="border-bottom border-secondary mb-4"></div>
         <section class="mb-5">
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 1: Цвета ТЕКСТА опций (text-primary,
-                text-success, text-warning, text-danger), ограничение по количеству элементов 4, поиск и кнопки действий</div>
+                text-success, text-warning, text-danger), ограничение по количеству элементов 4, поиск и кнопки действий
+            </div>
             <div class="row align-items-start">
-                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-max-items="4"
-                        data-placeholder="Цветной текст...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple
+                        data-max-items="4" data-placeholder="Цветной текст...">
                         <option class="text-primary">Приоритет (Primary)</option>
                         <option class="text-success">Успешно (Success)</option>
                         <option class="text-warning">Внимание (Warning)</option>
@@ -69,8 +70,8 @@ http://www.jonyrh.ru
                         <option class="text-info">Info (Информация)</option>
                         <option class="text-secondary">Вторичный (Secondary)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-max-items="4"
-                        data-placeholder="Цветной текст...">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple
+                        data-max-items="4" data-placeholder="Цветной текст...">
                         <option class="text-primary">Приоритет (Primary)</option>
                         <option class="text-success">Успешно (Success)</option>
                         <option class="text-warning">Внимание (Warning)</option>
@@ -84,19 +85,22 @@ http://www.jonyrh.ru
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 2: Цвета ФОНА всей строки
                 (bg-primary, bg-success, bg-warning, bg-danger), без поиска, кнопки действий</div>
             <div class="row align-items-start">
-                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple
+                        data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
                         <option class="bg-danger text-white">Красный (bg-danger)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
+                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple
+                        data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
                         <option class="bg-danger text-white">Красный (bg-danger)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Цветной фон..." data-search="false">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple
+                        data-placeholder="Цветной фон..." data-search="false">
                         <option class="bg-primary text-white">Синий (bg-primary)</option>
                         <option class="bg-success text-white">Зеленый (bg-success)</option>
                         <option class="bg-warning text-dark">Желтый (bg-warning)</option>
@@ -108,17 +112,20 @@ http://www.jonyrh.ru
             <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 3: Модификация ШРИФТА (fw-bold,
                 fst-italic, font-monospace), без кнопок действий</div>
             <div class="row align-items-start">
-                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple
+                        data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
+                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple
+                        data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
                     </select></div>
-                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Шрифты..." data-actions="false">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple
+                        data-placeholder="Шрифты..." data-actions="false">
                         <option class="fw-bold text-success">Жирный (fw-bold)</option>
                         <option class="fst-italic text-warning">Курсив (fst-italic)</option>
                         <option class="font-monospace text-info">Код (font-monospace)</option>
@@ -219,10 +226,31 @@ http://www.jonyrh.ru
             </div>
         </section>
         <section class="mb-5">
-            <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 7: Использование в модальном окне Bootstrap</div>
+            <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 7: Использование в модальном окне
+                Bootstrap</div>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Открыть модальное окно с MultiSelect
             </button>
+        </section>
+        <section class="mb-5">
+            <div class="alert alert-secondary py-2 mb-3 small fw-semibold">Вариант 8: Длинные пункты выпадающего списка (обрезка с «…») — текст не переносится, длинный текст обрезается по ширине dropdown</div>
+            <div class="row align-items-start">
+                <div class="col-md-4 mb-3"><select class="form-select form-select-sm bs-multiselect" multiple data-placeholder="Длинные пункты...">
+                        <option>Очень длинное название опции, которое должно обрезаться с многоточием</option>
+                        <option>Короткий текст</option>
+                        <option>Ещё одна очень-очень длинная опция для демонстрации работы ellipsis</option>
+                    </select></div>
+                <div class="col-md-4 mb-3"><select class="form-select bs-multiselect" multiple data-placeholder="Длинные пункты...">
+                        <option>Очень длинное название опции, которое должно обрезаться с многоточием</option>
+                        <option>Короткий текст</option>
+                        <option>Ещё одна очень-очень длинная опция для демонстрации работы ellipsis</option>
+                    </select></div>
+                <div class="col-md-4 mb-3"><select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Длинные пункты...">
+                        <option>Очень длинное название опции, которое должно обрезаться с многоточием</option>
+                        <option>Короткий текст</option>
+                        <option>Ещё одна очень-очень длинная опция для демонстрации работы ellipsis</option>
+                    </select></div>
+            </div>
         </section>
     </div>
 
@@ -235,11 +263,13 @@ http://www.jonyrh.ru
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Тестирование работы выпадающего списка внутри модального окна. Выпадающий список должен выходить за границы модального окна:</p>
-                    
+                    <p>Тестирование работы выпадающего списка внутри модального окна. Выпадающий список должен выходить
+                        за границы модального окна:</p>
+
                     <div class="mb-3">
                         <label for="modalSelect1" class="form-label">Выберите элементы:</label>
-                        <select class="form-select bs-multiselect" multiple data-placeholder="Выберите технологии..." id="modalSelect1">
+                        <select class="form-select bs-multiselect" multiple data-placeholder="Выберите технологии..."
+                            id="modalSelect1">
                             <option class="text-primary">HTML5</option>
                             <option class="text-success">CSS3</option>
                             <option class="text-warning">JavaScript</option>
@@ -253,7 +283,8 @@ http://www.jonyrh.ru
 
                     <div class="mb-3">
                         <label for="modalSelect2" class="form-label">Выберите фреймворк:</label>
-                        <select class="form-select form-select-lg bs-multiselect" multiple data-placeholder="Выберите фреймворк..." id="modalSelect2">
+                        <select class="form-select form-select-lg bs-multiselect" multiple
+                            data-placeholder="Выберите фреймворк..." id="modalSelect2">
                             <optgroup label="Frontend">
                                 <option class="text-info fw-bold">React</option>
                                 <option class="text-muted">Vue</option>
@@ -274,7 +305,9 @@ http://www.jonyrh.ru
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 
     <script src="./jonyrh-multiselect-bs5.js"></script>
 

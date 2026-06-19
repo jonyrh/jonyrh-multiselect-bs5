@@ -88,9 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>` : '';
 
       const actionsHtml = showActions ? `
-        <div class="d-flex justify-content-between row-gap-1">
-          <button type="button" class="btn btn-link p-0 text-decoration-none btn-sm select-all-btn ${isSelectDisabled}">Выбрать всё</button>
-          <button type="button" class="btn btn-link p-0 text-decoration-none btn-sm text-danger clear-all-btn ${isSelectDisabled}">Сбросить</button>
+        <div class="d-flex align-items-center row-gap-2">
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-link p-0 text-decoration-none btn-sm select-all-btn ${isSelectDisabled}">Выбрать всё</button>
+            <button type="button" class="btn btn-link p-0 text-decoration-none btn-sm text-danger clear-all-btn ${isSelectDisabled}">Сбросить</button>
+          </div>
+          <button type="button" class="btn btn-link p-0 text-decoration-none btn-sm apply-btn ms-auto ${isSelectDisabled}" style="color: var(--bs-success) !important;">Применить</button>
         </div>` : '';
 
       headerHtml = `
@@ -100,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
     }
 
-    const autoCloseAttr = isMultiple ? 'data-bs-auto-close="outside"' : '';
+    const autoCloseAttr = isMultiple ? 'data-bs-auto-close="off"' : '';
 
     dropdownWrapper.innerHTML = `
       <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start d-flex justify-content-between align-items-center ${btnSizeClass}" 
@@ -126,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noResults = dropdownWrapper.querySelector('.no-results');
     const selectAllBtn = dropdownWrapper.querySelector('.select-all-btn');
     const clearAllBtn = dropdownWrapper.querySelector('.clear-all-btn');
+    const applyBtn = dropdownWrapper.querySelector('.apply-btn');
 
     if (maxItems && customOptions.length > maxItems) {
       optionsList.style.setProperty('--max-items', maxItems);
@@ -263,10 +267,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     customOptions.forEach(optionDiv => {
+      optionDiv.addEventListener('click', (e) => {
+        if (isMultiple) {
+          e.stopPropagation();
+        }
+      });
+
       const checkbox = optionDiv.querySelector('.form-check-input');
       if (checkbox) {
-        checkbox.addEventListener('change', syncCustomToNative);
+        checkbox.addEventListener('change', (e) => {
+          e.stopPropagation();
+          syncCustomToNative(e);
+        });
       }
+    });
+
+    optionsList.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     optionsList.addEventListener('change', syncCustomToNative);
@@ -290,6 +307,15 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
         syncCustomToNative();
+      });
+    }
+
+    if (applyBtn) {
+      applyBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        syncCustomToNative();
+        const bsDropdown = bootstrap.Dropdown.getOrCreateInstance(dropdownWrapper.querySelector('.dropdown-toggle'));
+        bsDropdown.hide();
       });
     }
 
