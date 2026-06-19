@@ -63,6 +63,33 @@
   padding: 0 !important;
 }
 
+.bs-multiselect-container .multiselect-header .btn-link svg {
+  width: var(--actions-height) !important;
+  height: var(--actions-height) !important;
+  flex-shrink: 0;
+}
+
+.bs-multiselect-container .clear-all-btn svg {
+  paint-order: stroke;
+  stroke: currentColor;
+  stroke-width: 0.8px;
+  stroke-linejoin: round;
+}
+
+.bs-multiselect-container .select-all-btn svg {
+  paint-order: stroke;
+  stroke: currentColor;
+  stroke-width: 0.18px;
+  stroke-linejoin: round;
+}
+
+.bs-multiselect-container .apply-btn svg {
+  paint-order: stroke;
+  stroke: currentColor;
+  stroke-width: 0.6px;
+  stroke-linejoin: round;
+}
+
 .bs-multiselect-container .options-list {
   padding: var(--list-padding-top) 0 var(--list-padding-bottom) 0;
   max-height: 280px;
@@ -303,6 +330,18 @@
   padding: 4px 12px 1px 12px;
 }
 
+.bs-multiselect-container.bs-multiselect-sm .clear-all-btn svg {
+  stroke-width: 1.5px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .select-all-btn svg {
+  stroke-width: 0.35px;
+}
+
+.bs-multiselect-container.bs-multiselect-sm .apply-btn svg {
+  stroke-width: 1.5px;
+}
+
 .bs-multiselect-container.bs-multiselect-lg {
   font-size: 1.25rem;
   --item-height: 46px;
@@ -369,6 +408,15 @@
 .bs-multiselect-container.bs-multiselect-lg .multiselect-group-label {
   font-size: 0.85rem;
   padding: 8px 20px 3px 20px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .clear-all-btn svg {
+  stroke-width: 0.6px;
+}
+
+.bs-multiselect-container.bs-multiselect-lg .select-all-btn svg,
+.bs-multiselect-container.bs-multiselect-lg .apply-btn svg {
+  stroke-width: 0.4px;
 }
 
 .bs-multiselect-container.is-invalid .dropdown-toggle {
